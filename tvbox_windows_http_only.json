@@ -2,9 +2,27 @@
   "sites": [
     {
       "key": "suoni",
-      "name": "索尼资源",
+      "name": "索尼資源（已實測）",
       "type": 1,
       "api": "https://suoniapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
+      "key": "huohu",
+      "name": "火狐資源（測試）",
+      "type": 1,
+      "api": "https://hhzyapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
+      "key": "baiduzy",
+      "name": "百度資源（測試）",
+      "type": 1,
+      "api": "https://api.apibdzy.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0
