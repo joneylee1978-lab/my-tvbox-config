@@ -2,7 +2,7 @@
   "sites": [
     {
       "key": "suoni",
-      "name": "索尼資源（已實測）",
+      "name": "索尼資源",
       "type": 1,
       "api": "https://suoniapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -11,7 +11,7 @@
     },
     {
       "key": "huohu",
-      "name": "火狐資源（測試）",
+      "name": "火狐資源",
       "type": 1,
       "api": "https://hhzyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -19,10 +19,46 @@
       "filterable": 0
     },
     {
-      "key": "baiduzy",
-      "name": "百度資源（測試）",
+      "key": "baidu",
+      "name": "百度資源",
       "type": 1,
       "api": "https://api.apibdzy.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
+      "key": "hongniu",
+      "name": "紅牛資源（測試）",
+      "type": 1,
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
+      "key": "feifan",
+      "name": "非凡資源（測試）",
+      "type": 1,
+      "api": "https://cj.ffzyapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
+      "key": "liangzi",
+      "name": "量子資源（測試）",
+      "type": 1,
+      "api": "https://cj.lziapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
+      "key": "guangsu",
+      "name": "光速資源（測試）",
+      "type": 1,
+      "api": "https://api.guangsuapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0
