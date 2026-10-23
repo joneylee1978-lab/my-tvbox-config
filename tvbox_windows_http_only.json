@@ -2,7 +2,7 @@
   "sites": [
     {
       "key": "suoni",
-      "name": "索尼資源",
+      "name": "索尼資源（已驗證）",
       "type": 1,
       "api": "https://suoniapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -11,7 +11,7 @@
     },
     {
       "key": "huohu",
-      "name": "火狐資源",
+      "name": "火狐資源（已驗證）",
       "type": 1,
       "api": "https://hhzyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -19,8 +19,8 @@
       "filterable": 0
     },
     {
-      "key": "baidu",
-      "name": "百度資源",
+      "key": "baiduzy",
+      "name": "百度資源（已驗證）",
       "type": 1,
       "api": "https://api.apibdzy.com/api.php/provide/vod/",
       "searchable": 1,
@@ -28,37 +28,37 @@
       "filterable": 0
     },
     {
-      "key": "hongniu",
-      "name": "紅牛資源（測試）",
+      "key": "tiankong",
+      "name": "天空資源（新測試）",
       "type": 1,
-      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+      "api": "https://api.tiankongapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0
     },
     {
-      "key": "feifan",
-      "name": "非凡資源（測試）",
+      "key": "wolong",
+      "name": "臥龍資源（新測試）",
       "type": 1,
-      "api": "https://cj.ffzyapi.com/api.php/provide/vod/",
+      "api": "https://collect.wolongzyw.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0
     },
     {
-      "key": "liangzi",
-      "name": "量子資源（測試）",
+      "key": "wujin",
+      "name": "無盡資源（新測試）",
       "type": 1,
-      "api": "https://cj.lziapi.com/api.php/provide/vod/",
+      "api": "https://api.wujinapi.net/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0
     },
     {
-      "key": "guangsu",
-      "name": "光速資源（測試）",
+      "key": "uku",
+      "name": "U酷資源（新測試）",
       "type": 1,
-      "api": "https://api.guangsuapi.com/api.php/provide/vod/",
+      "api": "https://api.ukuapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0
