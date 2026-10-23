@@ -2,7 +2,7 @@
   "sites": [
     {
       "key": "suoni",
-      "name": "索尼資源（已驗證）",
+      "name": "索尼資源",
       "type": 1,
       "api": "https://suoniapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -11,7 +11,7 @@
     },
     {
       "key": "huohu",
-      "name": "火狐資源（已驗證）",
+      "name": "火狐資源",
       "type": 1,
       "api": "https://hhzyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -20,7 +20,7 @@
     },
     {
       "key": "baiduzy",
-      "name": "百度資源（已驗證）",
+      "name": "百度資源",
       "type": 1,
       "api": "https://api.apibdzy.com/api.php/provide/vod/",
       "searchable": 1,
@@ -28,37 +28,10 @@
       "filterable": 0
     },
     {
-      "key": "tiankong",
-      "name": "天空資源（新測試）",
-      "type": 1,
-      "api": "https://api.tiankongapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0
-    },
-    {
-      "key": "wolong",
-      "name": "臥龍資源（新測試）",
-      "type": 1,
-      "api": "https://collect.wolongzyw.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0
-    },
-    {
       "key": "wujin",
-      "name": "無盡資源（新測試）",
+      "name": "無盡資源（部分可播放）",
       "type": 1,
       "api": "https://api.wujinapi.net/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0
-    },
-    {
-      "key": "uku",
-      "name": "U酷資源（新測試）",
-      "type": 1,
-      "api": "https://api.ukuapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0
