@@ -1,0 +1,10 @@
+{
+  "sites": [
+    {"key": "zuida", "name": "最大資源", "type": 1, "api": "https://api.zuidapi.com/api.php/provide/vod/"},
+    {"key": "jisu", "name": "極速資源", "type": 1, "api": "https://jszyapi.com/api.php/provide/vod/"},
+    {"key": "xinlang", "name": "新浪資源", "type": 1, "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod/"},
+    {"key": "zy360", "name": "360 資源", "type": 1, "api": "https://360zyzz.com/api.php/provide/vod/"},
+    {"key": "modu", "name": "魔都資源", "type": 1, "api": "https://www.mdzyapi.com/api.php/provide/vod/"},
+    {"key": "subo", "name": "速播資源", "type": 1, "api": "https://subocaiji.com/api.php/provide/vod/"}
+  ]
+}
