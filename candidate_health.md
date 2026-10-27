@@ -1,6 +1,6 @@
 # TVBox 候選片源檢測報告
 
-檢測時間：2026-10-27 15:07 UTC
+檢測時間：2026-10-27 15:23 UTC
 
 > 僅測 CMS API 列表和關鍵字搜尋；不代表 TVBox for Windows 播放相容、影片可播放或內容授權。
 > 不會修改 tvbox_windows_http_only.json，也不會自動加入或刪除來源。
