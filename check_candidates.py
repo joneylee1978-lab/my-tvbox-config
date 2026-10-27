@@ -10,6 +10,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CANDIDATES = ROOT / "candidate_sources.json"
 REPORT = ROOT / "candidate_health.md"
+PLAYBACK = ROOT / "playback_results.json"
+
+PLAYBACK_STATUS = {
+    "pass": "已實測通過",
+    "previously_playable": "過去可播放",
+    "partial": "部分可播放",
+    "crash": "閃退／排除",
+    "playback_failed": "播放失敗／排除",
+    "not_tested": "尚未實測",
+}
+BLOCKED = {"crash", "playback_failed"}
 TIMEOUT = 12
 KEYWORDS = ["流浪地球", "航海王"]
 
@@ -51,19 +62,25 @@ def md_escape(s):
 
 def main():
     data = json.loads(CANDIDATES.read_text(encoding="utf-8-sig"))
+    playback = json.loads(PLAYBACK.read_text(encoding="utf-8-sig")) if PLAYBACK.exists() else {}
+    actual = playback.get("sources", {})
     lines = [
         "# TVBox 候選片源檢測報告", "",
         "檢測時間：" + dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "",
         "> 僅測 CMS API 列表和關鍵字搜尋；不代表 TVBox for Windows 播放相容、影片可播放或內容授權。",
         "> 不會修改 tvbox_windows_http_only.json，也不會自動加入或刪除來源。", "",
-        "| 候選來源 | 片庫 API | 流浪地球 | 航海王 | 備註 |",
-        "|---|---|---|---|---|",
+        "| 候選來源 | 片庫 API | 流浪地球 | 航海王 | TVBox 實測 | 推薦狀態 | 備註 |",
+        "|---|---|---|---|---|---|---|",
     ]
     for source in data.get("sites", []):
         name = source.get("name", source.get("key", "未命名"))
         api = source.get("api", "")
+        result = actual.get(source.get("key"), {})
+        manual = result.get("status", "not_tested")
+        manual_text = PLAYBACK_STATUS.get(manual, "紀錄值未知")
+        manual_note = result.get("note", "")
         if source.get("type") != 1 or not api.startswith("https://"):
-            lines.append(f"| {md_escape(name)} | 略過 | 略過 | 略過 | 非 HTTPS type=1 來源 |")
+            lines.append(f"| {md_escape(name)} | 略過 | 略過 | 略過 | {manual_text} | 不推薦 | 非 HTTPS type=1 來源 |")
             continue
         statuses = []
         details = []
@@ -71,8 +88,16 @@ def main():
             status, detail = grade(*request_api(api, params))
             statuses.append(status)
             details.append(detail)
-        lines.append("| " + " | ".join(md_escape(x) for x in [name, *statuses, "；".join(details)]) + " |")
-    lines.extend(["", "建議：以連續多次結果判斷穩定性，且在 TVBox 實測播放前，不要自動納入正式配置。", ""])
+        if manual in BLOCKED:
+            recommendation = "不推薦（實測失敗）"
+        elif manual == "pass" and all(s == "正常" for s in statuses):
+            recommendation = "已通過（可保留）"
+        elif manual == "pass":
+            recommendation = "曾通過播放；API 須複查"
+        else:
+            recommendation = "待人工播放驗證"
+        lines.append("| " + " | ".join(md_escape(x) for x in [name, *statuses, manual_text, recommendation, "；".join(details) + ("；人工實測：" + manual_note if manual_note else "")]) + " |")
+    lines.extend(["", "推薦規則：人工實測『閃退』或『播放失敗』者，即使 API 全部正常，也一律標記為不推薦；人工通過且 API 正常才顯示已通過。", "此報告不會修改正式 TVBox JSON；人工實測結果需要手動更新 playback_results.json。", ""])
     REPORT.write_text("\n".join(lines), encoding="utf-8")
     print(f"Wrote {REPORT.name} for {len(data.get('sites', []))} candidates")
 
