@@ -1,0 +1,47 @@
+{
+  "device": "TVBox for Windows 1.1.0 (PC A)",
+  "tested_on": "2026-10-27",
+  "notes": "Manual tests on TVBox PC; API success does not imply playback success.",
+  "sources": {
+    "suoni": {
+      "status": "previously_playable",
+      "note": "Previously played, keyword search reported problematic; retain in official config"
+    },
+    "huohu": {
+      "status": "previously_playable",
+      "note": "Previously confirmed playable"
+    },
+    "baiduzy": {
+      "status": "previously_playable",
+      "note": "Previously confirmed playable"
+    },
+    "wujin": {
+      "status": "partial",
+      "note": "Some titles playable"
+    },
+    "zuida": {
+      "status": "pass",
+      "note": "Search and playback tested OK"
+    },
+    "modu": {
+      "status": "pass",
+      "note": "Search and playback tested OK"
+    },
+    "jisu": {
+      "status": "crash",
+      "note": "Two different titles crash TVBox.exe on play; coreclr.dll APPCRASH c0000005 in Windows reliability monitor"
+    },
+    "zy360": {
+      "status": "playback_failed",
+      "note": "Search OK, multiple streams/titles fail with avformat_open_input End of file"
+    },
+    "subo": {
+      "status": "crash",
+      "note": "Playback crashes TVBox.exe"
+    },
+    "xinlang": {
+      "status": "not_tested",
+      "note": "API reports uncertain; not tested in this TVBox PC"
+    }
+  }
+}
