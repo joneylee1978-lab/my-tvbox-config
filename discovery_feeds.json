@@ -1,0 +1,10 @@
+{
+  "feeds": [
+    {
+      "name": "TVboxorg curated aggregation",
+      "url": "https://raw.githubusercontent.com/TVboxorg/TVbox/main/dist/official.json",
+      "enabled": true
+    }
+  ],
+  "max_new_candidates": 25
+}
