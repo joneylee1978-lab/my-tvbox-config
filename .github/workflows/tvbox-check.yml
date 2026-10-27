@@ -2,7 +2,7 @@ name: TVBox source health check
 
 on:
   schedule:
-    - cron: '20 1 * * *' # 09:20 Asia/Taipei; GitHub may delay scheduled runs
+    - cron: '20 1 * * *' # 09:20 Asia/Taipei, GitHub may delay scheduled runs
   workflow_dispatch:
 
 permissions:
@@ -16,14 +16,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check API status and write report
+      - name: Check existing TVBox sources
         run: python check_sources.py
-      - name: Commit report only if changed
+      - name: Check candidate sources
+        run: python check_candidates.py
+      - name: Commit reports only if changed
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add source_health.md
+          git add source_health.md candidate_health.md
           if ! git diff --cached --quiet; then
-            git commit -m 'Update TVBox source health report'
+            git commit -m 'Update TVBox source health reports'
             git push
           fi
