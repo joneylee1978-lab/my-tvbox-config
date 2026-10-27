@@ -20,11 +20,13 @@ jobs:
         run: python check_sources.py
       - name: Check candidate sources
         run: python check_candidates.py
+      - name: Discover new sources
+        run: python discover_sources.py
       - name: Commit reports only if changed
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add source_health.md candidate_health.md
+          git add source_health.md candidate_health.md discovery_report.md
           if ! git diff --cached --quiet; then
             git commit -m 'Update TVBox source health reports'
             git push
